@@ -967,10 +967,13 @@
       // 📌 PASO FINAL: Reemplaza esta URL con la de tu Edge Function.
       //    La encuentras en: Supabase → Edge Functions → cotizacion-email → Endpoint URL
       const res = await fetch('https://jejytswhirjhvtnkmcmw.supabase.co/functions/v1/cotizacion-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Implanl0c3doaXJqaHZ0bmttY213Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NTA4ODYsImV4cCI6MjA5MjAyNjg4Nn0.A6up4gbKoMvniaYyMHIWmoJGq-DwJ6-6Q-GxkUwVj0Q',
+  },
+  body: JSON.stringify(payload),
+});
  
       if (res.ok) {
         document.getElementById('quote-form').style.display = 'none';
